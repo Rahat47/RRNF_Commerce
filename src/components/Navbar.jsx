@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { Badge } from "@material-ui/core";
+import Badge from "@mui/material/Badge";
 import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 
+//* Styled Elements
 const Container = styled.div`
     height: 60px;
 `;
@@ -58,6 +59,7 @@ const MenuItem = styled.div`
     margin-left: 25px;
 `;
 
+//* Component
 const Navbar = () => {
     return (
         <Container>
