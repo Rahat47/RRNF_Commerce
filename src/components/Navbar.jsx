@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import Badge from "@mui/material/Badge";
-import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import styled from 'styled-components';
+import Badge from '@mui/material/Badge';
+import { Search, ShoppingCartOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 //* Styled Elements
 const Container = styled.div`
@@ -44,6 +45,11 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
 `;
 
 const Right = styled.div`
@@ -70,21 +76,23 @@ const Navbar = () => {
                         <Input />
                         <Search
                             style={{
-                                color: "gray",
-                                fontSize: "16px",
-                                cursor: "pointer",
+                                color: 'gray',
+                                fontSize: '16px',
+                                cursor: 'pointer',
                             }}
                         />
                     </SearchContainer>
                 </Left>
                 <Center>
-                    <Logo>RRNF-Commerce</Logo>
+                    <Logo>
+                        <Link to='/'>RRNF-Commerce</Link>
+                    </Logo>
                 </Center>
                 <Right>
                     <MenuItem>Register</MenuItem>
                     <MenuItem>Signin</MenuItem>
                     <MenuItem>
-                        <Badge badgeContent={100} max={99} color="primary">
+                        <Badge badgeContent={100} max={99} color='primary'>
                             <ShoppingCartOutlined />
                         </Badge>
                     </MenuItem>

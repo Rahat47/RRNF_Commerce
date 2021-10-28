@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
-import SearchIcon from "@mui/icons-material/Search";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import styled from 'styled-components';
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Link } from 'react-router-dom';
 
 // Styled Components
 const Info = styled.div`
@@ -50,7 +51,7 @@ const Image = styled.img`
     z-index: 2;
 `;
 
-const Icon = styled.div`
+const Icon = styled(Link)`
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -61,6 +62,7 @@ const Icon = styled.div`
     margin: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    color: black;
 
     &:hover {
         background-color: #e9f5f5;
@@ -74,15 +76,15 @@ const Product = ({ item }) => {
             <Circle />
             <Image src={item.img} />
             <Info>
-                <Icon>
+                <Icon to='/'>
                     <AddShoppingCartOutlinedIcon />
                 </Icon>
 
-                <Icon>
+                <Icon to={`/products/${item.id}`}>
                     <SearchIcon />
                 </Icon>
 
-                <Icon>
+                <Icon to='/'>
                     <FavoriteBorderIcon />
                 </Icon>
             </Info>
