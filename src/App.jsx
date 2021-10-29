@@ -6,6 +6,8 @@ import ProductPage from './pages/ProductPage';
 import ProductList from './pages/ProductList';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Cart from './pages/Cart';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
@@ -34,7 +36,9 @@ const App = () => {
                                 path='/products/:id'
                                 component={ProductPage}
                             />
+                            <Route exact path='/cart' component={Cart} />
                         </Switch>
+                        <Footer />
                     </main>
                 </Route>
             </Switch>

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { popularProducts } from "../assets/data/data";
-import Product from "./Product";
+import styled from 'styled-components';
+import { popularProducts } from '../assets/data/data';
+import Product from './Product';
 
 const Container = styled.div`
     display: flex;

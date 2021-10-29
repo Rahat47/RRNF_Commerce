@@ -1,5 +1,5 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 const Info = styled.div`
     position: absolute;
     top: 100%;
@@ -48,12 +48,20 @@ const Button = styled.button`
 `;
 
 const CategoryItem = ({ item }) => {
+    const history = useHistory();
+
     return (
         <Container>
             <Image src={item.img} />
             <Info>
                 <Title>{item.title}</Title>
-                <Button>Shop Now</Button>
+                <Button
+                    onClick={() => {
+                        history.push(`/products`);
+                    }}
+                >
+                    Shop Now
+                </Button>
             </Info>
         </Container>
     );

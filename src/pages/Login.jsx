@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -74,13 +74,22 @@ const Button = styled.button`
 `;
 
 const Login = () => {
+    const history = useHistory();
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log('submit');
+        history.push('/');
+    };
+
     return (
         <Container>
             <Wrapper>
                 <Title>Login to your account</Title>
-                <Form autoComplete='off'>
-                    <Input name='username' placeholder='Username' />
+                <Form onSubmit={handleSubmit} autoComplete='off'>
+                    <Input required name='username' placeholder='Username' />
                     <Input
+                        required
                         type='password'
                         name='password'
                         placeholder='Password'
