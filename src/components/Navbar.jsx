@@ -59,7 +59,9 @@ const Right = styled.div`
     justify-content: flex-end;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled(Link)`
+    text-decoration: none;
+    color: #000;
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px;
@@ -89,9 +91,9 @@ const Navbar = () => {
                     </Logo>
                 </Center>
                 <Right>
-                    <MenuItem>Register</MenuItem>
-                    <MenuItem>Signin</MenuItem>
-                    <MenuItem>
+                    <MenuItem to='/register'>Register</MenuItem>
+                    <MenuItem to='/login'>Signin</MenuItem>
+                    <MenuItem to='/cart'>
                         <Badge badgeContent={100} max={99} color='primary'>
                             <ShoppingCartOutlined />
                         </Badge>
