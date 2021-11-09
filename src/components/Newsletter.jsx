@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import SendIcon from "@mui/icons-material/Send";
+import styled from 'styled-components';
+import SendIcon from '@mui/icons-material/Send';
+import { responsive } from '../utils/responsive';
 
 const Container = styled.div`
     height: 60vh;
@@ -17,6 +18,10 @@ const Description = styled.p`
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 1.25rem;
+
+    ${responsive(450, {
+        textAlign: 'center',
+    })}
 `;
 const InputContainer = styled.div`
     width: 50%;
@@ -25,6 +30,10 @@ const InputContainer = styled.div`
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
+
+    ${responsive(450, {
+        width: '80%',
+    })}
 `;
 const Input = styled.input`
     border: none;
@@ -60,7 +69,7 @@ const Newsletter = () => {
             <Title>Newsletter</Title>
             <Description>Get the latest news and updates from us.</Description>
             <InputContainer>
-                <Input placeholder="Your Email" />
+                <Input placeholder='Your Email' />
                 <Button>
                     <SendIcon />
                 </Button>

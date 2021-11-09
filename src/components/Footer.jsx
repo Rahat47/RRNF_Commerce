@@ -1,20 +1,29 @@
-import styled from "styled-components";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import MapIcon from "@mui/icons-material/Map";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import EmailIcon from "@mui/icons-material/Email";
+import styled from 'styled-components';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import MapIcon from '@mui/icons-material/Map';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
+import { responsive } from '../utils/responsive';
 
 const Container = styled.div`
     display: flex;
+
+    ${responsive(450, {
+        flexDirection: 'column',
+    })}
 `;
 const Left = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 1.25rem;
+
+    ${responsive(450, {
+        alignItems: 'center',
+    })}
 `;
 
 const Logo = styled.h1``;
@@ -29,7 +38,7 @@ const SocialIcon = styled.div`
     height: 2.5rem;
     border-radius: 50%;
     color: white;
-    background-color: ${props => (props.bg ? props.bg : "#fcf5f5")};
+    background-color: ${props => (props.bg ? props.bg : '#fcf5f5')};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +49,10 @@ const SocialIcon = styled.div`
 const Right = styled.div`
     flex: 1;
     padding: 1.25rem;
+
+    ${responsive(450, {
+        backgroundColor: '#fcf5f5',
+    })}
 `;
 
 const ContactItem = styled.div`
@@ -67,6 +80,10 @@ const Payment = styled.img`
 const Center = styled.div`
     flex: 1;
     padding: 1.25rem;
+
+    ${responsive(450, {
+        display: 'none',
+    })}
 `;
 
 const Title = styled.h3`
@@ -101,19 +118,19 @@ const Footer = () => {
                 </Description>
 
                 <SocialContainer>
-                    <SocialIcon bg="#3B5999">
+                    <SocialIcon bg='#3B5999'>
                         <FacebookIcon />
                     </SocialIcon>
 
-                    <SocialIcon bg="#E4405F">
+                    <SocialIcon bg='#E4405F'>
                         <InstagramIcon />
                     </SocialIcon>
 
-                    <SocialIcon bg="#55ACEE">
+                    <SocialIcon bg='#55ACEE'>
                         <TwitterIcon />
                     </SocialIcon>
 
-                    <SocialIcon bg="#FF0000">
+                    <SocialIcon bg='#FF0000'>
                         <YouTubeIcon />
                     </SocialIcon>
                 </SocialContainer>
@@ -153,11 +170,11 @@ const Footer = () => {
                 </ContactItem>
 
                 <PaymentContainer>
-                    <Payment src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" />
-                    <Payment src="https://www.mastercard.com/content/dam/mccom/global/logos/logo-mastercard-mobile.svg" />
-                    <Payment src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/3072px-Former_Visa_%28company%29_logo.svg.png" />
-                    <Payment src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" />
-                    <Payment src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/1200px-BTC_Logo.svg.png" />
+                    <Payment src='https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg' />
+                    <Payment src='https://www.mastercard.com/content/dam/mccom/global/logos/logo-mastercard-mobile.svg' />
+                    <Payment src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Former_Visa_%28company%29_logo.svg/3072px-Former_Visa_%28company%29_logo.svg.png' />
+                    <Payment src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png' />
+                    <Payment src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/1200px-BTC_Logo.svg.png' />
                 </PaymentContainer>
             </Right>
         </Container>

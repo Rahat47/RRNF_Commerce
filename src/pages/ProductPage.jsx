@@ -2,11 +2,17 @@ import styled from 'styled-components';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import Newsletter from '../components/Newsletter';
+import { responsive } from '../utils/responsive';
 const Container = styled.div``;
 
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+
+    ${responsive(450, {
+        padding: '50px 5px',
+        flexDirection: 'column',
+    })}
 `;
 const ImageContainer = styled.div`
     flex: 1;
@@ -15,6 +21,10 @@ const Image = styled.img`
     width: 100%;
     height: 85vh;
     object-fit: cover;
+
+    ${responsive(450, {
+        height: '65vh',
+    })}
 `;
 
 const InfoContainer = styled.div`
@@ -81,6 +91,10 @@ const AddContainer = styled.div`
     align-items: center;
     width: 50%;
     justify-content: space-between;
+
+    ${responsive(450, {
+        width: '100%',
+    })}
 `;
 const AmountContainer = styled.div`
     display: flex;

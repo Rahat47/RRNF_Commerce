@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { responsive } from '../utils/responsive';
 
 const Container = styled.div`
     width: 100vw;
@@ -17,6 +18,10 @@ const Wrapper = styled.div`
     padding: 1.25rem;
     width: 40%;
     background-color: white;
+
+    ${responsive(450, {
+        width: '80%',
+    })}
 `;
 
 const Title = styled.h1`

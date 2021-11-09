@@ -2,10 +2,15 @@ import styled from 'styled-components';
 import Badge from '@mui/material/Badge';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { responsive } from '../utils/responsive';
 
 //* Styled Elements
 const Container = styled.div`
     height: 60px;
+
+    ${responsive(450, {
+        height: '50px',
+    })}
 `;
 
 const Wrapper = styled.div`
@@ -13,6 +18,10 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ${responsive(450, {
+        padding: '10px 0',
+    })}
 `;
 
 const Left = styled.div`
@@ -24,6 +33,10 @@ const Left = styled.div`
 const Language = styled.span`
     font-size: 14px;
     cursor: pointer;
+
+    ${responsive(450, {
+        display: 'none',
+    })}
 `;
 
 const SearchContainer = styled.div`
@@ -36,6 +49,10 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
+
+    ${responsive(450, {
+        width: '50px',
+    })}
 `;
 
 const Center = styled.div`
@@ -50,6 +67,10 @@ const Logo = styled.h1`
         text-decoration: none;
         color: #333;
     }
+
+    ${responsive(450, {
+        fontSize: '1rem',
+    })}
 `;
 
 const Right = styled.div`
@@ -57,6 +78,11 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    ${responsive(450, {
+        justifyContent: 'center',
+        flex: 2,
+    })}
 `;
 
 const MenuItem = styled(Link)`
@@ -65,6 +91,11 @@ const MenuItem = styled(Link)`
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px;
+
+    ${responsive(450, {
+        fontSize: '0.75rem',
+        marginLeft: '10px',
+    })}
 `;
 
 //* Component
@@ -75,7 +106,7 @@ const Navbar = () => {
                 <Left>
                     <Language>EN</Language>
                     <SearchContainer>
-                        <Input />
+                        <Input type='text' placeholder='Search...' />
                         <Search
                             style={{
                                 color: 'gray',

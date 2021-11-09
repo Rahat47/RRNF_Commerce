@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { responsive } from '../utils/responsive';
 const Info = styled.div`
     position: absolute;
     top: 100%;
@@ -31,6 +32,10 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    ${responsive(450, {
+        height: '25vh',
+    })}
 `;
 
 const Title = styled.h1`

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { responsive } from '../utils/responsive';
 
 const Container = styled.div`
     padding: 0 1.25rem;
@@ -8,6 +9,10 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
     padding: 1.25rem;
+
+    ${responsive(450, {
+        padding: '10px',
+    })}
 `;
 const Title = styled.h1`
     font-weight: 300;
@@ -35,6 +40,10 @@ const TopTexts = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    ${responsive(450, {
+        display: 'none',
+    })}
 `;
 const TopText = styled.span`
     text-decoration: underline;
@@ -45,6 +54,10 @@ const TopText = styled.span`
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${responsive(450, {
+        flexDirection: 'column',
+    })}
 `;
 
 const Info = styled.div`
@@ -54,6 +67,10 @@ const Info = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${responsive(450, {
+        flexDirection: 'column',
+    })}
 `;
 const ProductDetail = styled.div`
     flex: 2;
@@ -108,10 +125,19 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.span`
     font-size: 1.5rem;
     margin: 5px 10px;
+
+    ${responsive(450, {
+        fontSize: '1.25rem',
+        margin: '5px 15px',
+    })}
 `;
 const Price = styled.span`
     font-size: 1.875rem;
     font-weight: 200;
+
+    ${responsive(450, {
+        marginBottom: '20px',
+    })}
 `;
 
 const HR = styled.hr`
